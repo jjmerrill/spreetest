@@ -12,10 +12,10 @@ development:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: premier_development
+  database: spreetest_development
   pool: 5
   username: root
-  password:
+  password: p@ssW0rd
   socket: /tmp/mysql.sock
 
 # Warning: The database defined as "test" will be erased and
@@ -25,18 +25,18 @@ test:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: premier_test
+  database: spreetest_test
   pool: 5
   username: root
-  password:
+  password: p@ssW0rd
   socket: /tmp/mysql.sock
 
 production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: premier_production
+  database: spreetest_production
   pool: 5
   username: root
-  password:
+  password: p@ssW0rd
   socket: /tmp/mysql.sock
