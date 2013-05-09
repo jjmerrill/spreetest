@@ -13,12 +13,15 @@ set :passenger_conf, true
 set :user, "app" # Login as?
 set :runner, "app" # Run ./script as?
 set :use_sudo, false
- 
-set :domain, "rails.example.com"
+
+set :domain, "premier.designplusdevelopment.com"
+
 role :web, "50.56.240.217"                          # Your HTTP server, Apache/etc
 role :app, "50.56.240.217"                          # This may be the same as your `Web` server
 role :db,  "50.56.240.217", :primary => true        # This is where Rails migrations will run
 #role :db,  "your slave db-server here"
+
+set :rails_env, "production"
 
 # if you want to clean up old releases on each deploy uncomment this:
 # after "deploy:restart", "deploy:cleanup"
