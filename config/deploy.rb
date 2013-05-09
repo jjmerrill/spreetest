@@ -1,3 +1,5 @@
+require 'bundler/capistrano'
+
 set :application, "spreetest"
 set :repository,  "git@github.com:jjmerrill/spreetest.git"
 
