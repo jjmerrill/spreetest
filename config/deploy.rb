@@ -45,4 +45,4 @@ namespace :deploy do
   end
 end
 
-after 'deploy:updated', 'deploy:symlink_blog'
+after 'deploy:update_code', 'deploy:symlink_blog'
