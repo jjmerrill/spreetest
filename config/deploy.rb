@@ -38,4 +38,11 @@ namespace :deploy do
   task :restart, :roles => :app, :except => { :no_release => true } do
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
   end
+
+  desc "symlink the blog"
+  task :symlink_blog, :roles => :app do
+    run "ln -s /var/local/spreetest/shared/blog public/blog"
+  end
 end
+
+after 'deploy:updated', 'deploy:symlink_blog'
