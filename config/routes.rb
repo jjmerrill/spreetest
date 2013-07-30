@@ -3,7 +3,7 @@ Premier::Application.routes.draw do
     root :to => redirect("http://premier.designplusdevelopment.com")
     match '/*path', :to => redirect {|params| "http://premier.designplusdevelopment.com/#{params[:path]}"}
   end
-	root :to => 'home#index'
+	#root :to => 'home#index'
 
   # This line mounts Spree's routes at the root of your application.
   # This means, any requests to URLs such as /products, will go to Spree::ProductsController.
