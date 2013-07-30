@@ -39,10 +39,17 @@ namespace :deploy do
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
   end
 
+  desc "symlink the spree images"
+  task :symlink_images, :roles => :app, :except => { :no_release => true } do
+    run "rm -rf #{release_path}/public/spree"
+    run "ln -nfs #{shared_path}/spree #{release_path}/public/spree"
+  end
+
   desc "symlink the blog"
-  task :symlink_blog, :roles => :app do
-    run "ln -s /var/local/spreetest/shared/blog #{current_path}/public/blog"
+  task :symlink_blog, :roles => :app, :except => { :no_release => true } do
+    run "ln -nfs #{shared_path}/blog #{release_path}/public/blog"
   end
 end
 
-after 'deploy:symlink', 'deploy:symlink_blog'
+after 'deploy:update_code', 'deploy:symlink_images'
+after 'deploy:update_code', 'deploy:symlink_blog'
