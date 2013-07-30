@@ -41,7 +41,7 @@ namespace :deploy do
 
   desc "symlink the blog"
   task :symlink_blog, :roles => :app do
-    run "ln -s /var/local/spreetest/shared/blog public/blog"
+    run "ln -s /var/local/spreetest/shared/blog #{current_path}public/blog"
   end
 end
 
