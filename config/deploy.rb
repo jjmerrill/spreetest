@@ -18,9 +18,9 @@ set :use_sudo, false
 
 set :domain, "premier.designplusdevelopment.com"
 
-role :web, "50.56.240.217"                          # Your HTTP server, Apache/etc
-role :app, "50.56.240.217"                          # This may be the same as your `Web` server
-role :db,  "50.56.240.217", :primary => true        # This is where Rails migrations will run
+role :web, "198.101.228.73"                          # Your HTTP server, Apache/etc
+role :app, "198.101.228.73"                          # This may be the same as your `Web` server
+role :db,  "198.101.228.73", :primary => true        # This is where Rails migrations will run
 #role :db,  "your slave db-server here"
 
 set :rails_env, "production"
